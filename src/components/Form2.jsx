@@ -416,51 +416,7 @@ const Form2 = () => {
               />
             </div>
 
-            {/* Campo de entrada para el correo electrónico */}
-            <div
-              className="FormTitle"
-              style={{
-                color: "#425466",
-                fontSize: 14,
-                fontFamily: "Arial",
-                fontWeight: 500,
-                lineHeight: 3.5,
-                wordWrap: "break-word",
-                marginBottom: 10, // Agregamos margen inferior
-              }}
-            >
-              Correo Electrónico
-            </div>
-            <div
-              className="Input"
-              style={{
-                width: "80%",
-                background: "#EDF2F7",
-                borderRadius: 6,
-                justifyContent: "flex-start",
-                alignItems: "center",
-                display: "flex",
-                marginBottom: 10, // Agregamos margen inferior
-              }}
-            >
-              <input
-                className="Control"
-                style={{
-                  flex: 1,
-                  height: 40,
-                  padding: "0 10px",
-                  border: "none",
-                  background: "#EDF2F7",
-                  color: "#7A828A",
-                  fontSize: 14,
-                  fontFamily: "Arial",
-                  fontWeight: 500,
-                }}
-                type="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                placeholder="Ingresa tu correo electrónico"
-              />
-            </div>
+         
 
             <br />
             <div style={{ width: "100%" }}>

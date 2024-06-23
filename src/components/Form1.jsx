@@ -5,11 +5,56 @@ import { CSSTransition } from "react-transition-group"; // Importa CSSTransition
 import "./trans.css"; // Importa tus estilos CSS
 import { Link } from "react-router-dom";
 import Button from "./Form2";
-
+import { useNavigate, useLocation } from "react-router-dom";
 const Form1 = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0); // Mueve la página hacia la parte superior cuando se monta el componente
-  }, []);
+    const [nombre, setNombre] = useState("");
+    const [ap, setAp] = useState("");
+    const [am, setAm] = useState("");
+    const [fecha_nacimiento, setFecha_Nacimiento] = useState("");
+    const [lugar_nacimiento, setLugar_Nacimiento] = useState("");
+    const navigate = useNavigate(); // Utiliza useNavigate para la navegación
+    const location = useLocation();
+    const [formData, setFormData] = useState({}); 
+  
+  
+  
+  
+    
+      const handleNext = () => {
+  
+  
+  
+        if (!nombre || !ap|| !lugar_nacimiento || !fecha_nacimiento) {
+          console.log("Por favor completa todos los campos.");
+          return;
+        }
+        const firstFormData = location.state || {};
+  
+        const combinedData = { ...firstFormData, nombre, ap, fecha_nacimiento, lugar_nacimiento };
+        // Puedes guardar los datos en algún estado compartido o en un contexto aquí
+        try {
+          navigate("/Form2", { state: combinedData });
+        } catch (error) {
+          console.log("error al mandar datos", error);
+        }
+      };
+    
+      // Resto del componente...
+    
+    
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+      if (location.state) {
+        const formData = location.state.formData;
+        setNombre(formData?.nombre || "");
+        setAp(formData?.ap || "");
+        setAm(formData?.am || "");
+        setFecha_Nacimiento(formData?.fecha_nacimiento || "");
+        setLugar_Nacimiento(formData?.lugar_nacimiento || "");
+        setFormData(formData);
+      }
+    }, []);
   const [placeOfBirth, setPlaceOfBirth] = useState("");
   const [isHovered, setIsHovered] = useState(false);
 
@@ -292,6 +337,9 @@ const Form1 = () => {
               }}
             >
               <input
+              name="nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
                 className="Control"
                 style={{
                   flex: 1,
@@ -334,6 +382,9 @@ const Form1 = () => {
               }}
             >
               <input
+              name="ap"
+              value={am}
+              onChange={(e) => setAp(e.target.value)}
                 className="Control"
                 style={{
                   flex: 1,
@@ -376,6 +427,9 @@ const Form1 = () => {
               }}
             >
               <input
+              name="fecha_nacimiento"
+              value={fecha_nacimiento}
+              onChange={(e) => setFecha_Nacimiento(e.target.value)}
                 className="Control"
                 style={{
                   flex: 1,
@@ -507,8 +561,9 @@ const Form1 = () => {
           >
             <div style={{ display: "flex" }}>
               <Link to="/Inicio">
-                <Button>
+                <Button onClick={handleNext}>
                   Salir<span style={{ marginLeft: 5 }}></span>
+                  
                 </Button>
               </Link>
               <Link to="/Form2">

@@ -1,18 +1,24 @@
-import nos from "../../src/assets/images/nos.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import logo from "../../src/assets/images/logo.png";
+import ser1 from "../../src/assets/images/ser1.png";
+import ser from "../../src/assets/images/ser.png";
+import { FaGoogle, FaFacebook, FaApple, FaTwitter } from "react-icons/fa";
+import styled from 'styled-components';
 
-const Nosotros = () => {
-  const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+const ResponsiveDiv = styled.div`
+  @media (max-width: 768px) {
+    /* Estilos para pantallas de hasta 768px de ancho */
+  }
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  @media (max-width: 480px) {
+    /* Estilos para pantallas de hasta 480px de ancho */
+  }
+`;
+
+const Servicios = () => {
   const CustomLink = ({ href, children }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -83,7 +89,6 @@ const Nosotros = () => {
     );
   };
   return (
-
     <div>
       <img
         style={{
@@ -112,14 +117,13 @@ const Nosotros = () => {
             display: "inline-flex",
           }}
         >
-         <div style={{ display: 'flex', alignItems: 'center', width: 954.62, opacity: 0.75 }}>
-         <h3 style={{ marginRight: '30px', color: '#FFFFFF' }}>Títulosin </h3>
+          <div style={{ width: 954.62, opacity: 0.75 }}>
             <CustomLink href="/Inicio">Inicio</CustomLink>
             <CustomLink href="/Servicios">Servicios</CustomLink>
             <CustomLink href="/Brigada">Brigada</CustomLink>
             <CustomLink href="/Nosotros">Contactos</CustomLink>
             <CustomLink href="/Soporte">Soporte</CustomLink>
-        </div>
+          </div>
 
 
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -205,274 +209,322 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <div
         style={{
-          width: 610,
-          height: 606,
-          left: 753,
-          top: 0,
-          position: 'absolute',
-          borderRadius: 20,
-          overflow: 'hidden',
-        }}
-      ></div>
-      <div
-        style={{
-          width: 353,
-          left: 193,
-          top: 17.5,
-          position: 'absolute',
-          color: '#363940',
-          fontSize: 32,
-          fontFamily: 'Arial',
-          fontWeight: '700',
-          lineHeight: 8,
-          wordWrap: 'break-word',
-        }}
-      >
-        Contacta con nosotros
-      </div>
-
-      <div
-        style={{
-          width: 460,
-          height: 318,
-          left: 193,
-          top: 232,
-          position: 'absolute',
+          width: "100%",
+          height: "100%",
+          paddingTop: 96,
+          paddingBottom: 160,
+          justifyContent: "center",
+          alignItems: "flex-start",
+          display: "inline-flex",
         }}
       >
         <div
           style={{
-            width: 460,
-            height: 166,
-            paddingTop: 95,
-            paddingBottom: 25,
-            left: 10,
-            
-            top: 152,
-            position: 'absolute',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            gap: 17,
-            display: 'inline-flex',
+            width: 1000,
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 64,
+            display: "inline-flex",
           }}
         >
           <div
             style={{
-              width: 160,
-              height: 350,
-              justifyContent: 'center',
-              alignItems: 'center',
-              display: 'inline-flex',
-            }}
-          >
-            <input
-              type="text"
-              style={{
-                width: 160,
-                height: 46,
-                padding: 20,
-                borderRadius: 4,
-                border: '1px #CAD1E1 solid',
-              }}
-              placeholder="Nombre (opcional)"
-            />
-          </div>
-          <div
-            style={{
-              width: 283,
-              height: 350,
-              justifyContent: 'center',
-              alignItems: 'center',
-              display: 'inline-flex',
-            }}
-          >
-            <input
-              type="email"
-              style={{
-                width: 280,
-                height: 46,
-                padding: 20,
-                borderRadius: 4,
-                border: '1px #CAD1E1 solid',
-              }}
-              placeholder="Correo electrónico (opcional)"
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            width: 460,
-            height: 166,
-            left: 0,
-            top: 150,
-            position: 'absolute',
-          }}
-        >
-          <textarea
-            style={{
-              width: 500,
-              height: 166,
-              padding: 20,
-              borderRadius: 4,
-              border: '1px #CAD1E1 solid',
-            }}
-            placeholder="Descripción"
-          />
-        </div>
-        <div
-          style={{
-            width: 460,
-            height: 150,
-            justifyContent: 'center',
-            alignItems: 'center',
-            display: 'inline-flex',
-          }}
-        >
-          <input
-            type="text"
-            style={{
-              width: 460,
-              height: 46,
-              padding: 20,
-              borderRadius: 4,
-              border: '1px #CAD1E1 solid',
-            }}
-            placeholder="Asunto"
-          />
-        </div>
-      </div>
-   
-    
-        <div
-          style={{
-            width: 410,
-            left: 193,
-            top: 179,
-            position: "absolute",
-            color: "#778299",
-            fontSize: 16,
-            fontFamily: "Arial",
-            fontWeight: "400",
-            lineHeight: 2.1,
-            wordWrap: "break-word",
-          }}
-        >
-          ¡Gracias por tu interés en compartir tu opinión o reportar algún
-          inconveniente con nuestra app!{" "}
-        </div>
-
-        <div
-          style={{
-            width: 160,
-            height: 46,
-            left: 193,
-            top: 558,
-            position: "absolute",
-          }}
-        >
-          <div
-            className="Button"
-            style={{
-              width: 200,
-              height: 40,
-              background: isHovered ? "#002761" : "white",
-              color: isHovered ? "white" : "black",
-              borderRadius: 90,
-              justifyContent: "center",
+              flexDirection: "column",
+              justifyContent: "flex-start",
               alignItems: "center",
+              gap: 32,
               display: "flex",
-              marginTop: 180,
-              border: isHovered ? "none" : "1px solid #4E4E4E",
-              cursor: "pointer",
-              transition: "background 0.3s, color 0.3s",
             }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
             <div
-              className="Label"
               style={{
-                textAlign: "center",
-                fontSize: 16,
-                fontFamily: "Arial",
-                fontWeight: "700",
-                lineHeight: 1.5,
-                wordWrap: "break-word",
-                padding: "5px 10px",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                gap: 16,
+                display: "flex",
               }}
             >
-              Enviar
+              
+              
+              <div
+                style={{
+                  width: 1000,
+                  textAlign: "center",
+                  color: "#1A191E",
+                  fontSize: 64,
+                  paddingTop:90,
+                  fontFamily: "Arial",
+                  fontWeight: "bold",
+                  lineHeight: 1.3,
+                  wordWrap: "break-word",
+                }}
+              >
+                Protección instantánea, asistencia confiable: <br />
+                esa es la promesa de PBOO
+              </div>
+            </div>
+            <div
+              style={{
+                width: 600,
+                textAlign: "justify",
+                color: "#1A191E",
+                fontSize: 20,
+                fontFamily: "Arial",
+                fontWeight: "500",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Nuestro objetivo es brindarte la seguridad y la tranquilidad que
+              necesitas para enfrentar cualquier emergencia. Con nuestra amplia
+              gama de servicios y un equipo dedicado, estamos aquí para
+              cuidarte, siempre.
+            </div>
+          </div>
+          <div
+            style={{
+              background: "#F8F8F8",
+              borderRadius: 16,
+              overflow: "hidden",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              display: "inline-flex",
+            }}
+          >
+            <img
+              style={{
+                position: "absolute",
+                top: "calc(75% + 30px)",
+                right: 90,
+                width: "20%",
+                height: "auto",
+              }}
+              src={ser1}
+              alt="ser1"
+            />
+          </div>
+          <div
+            style={{
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              gap: 32,
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                width: 540,
+                color: "#1A191E",
+                fontSize: 28,
+                fontFamily: "Arial",
+                fontWeight: "bold",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Historia de PBOO:
+            </div>
+            <div
+              style={{
+                width: 600,
+                color: "#1A191E",
+                fontSize: 18,
+                fontFamily: "Arial",
+                fontWeight: "500",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              PBOO fue fundada en 2023 con la visión de proporcionar una
+              solución integral para la seguridad personal en situaciones de
+              emergencia. Nuestra historia se remonta a 2023, cuando un equipo
+              de expertos en seguridad y tecnología se unió para abordar la
+              creciente necesidad de herramientas efectivas y accesibles para
+              proteger a las personas en momentos críticos. Desde entonces,
+              hemos estado comprometidos con la innovación y el desarrollo
+              continuo para ofrecer servicios de seguridad de vanguardia a
+              nuestros usuarios en todo el mundo. <br />
+            </div>
+            <div
+              style={{
+                width: 540,
+                color: "#1A191E",
+                fontSize: 28,
+                fontFamily: "Arial",
+                fontWeight: "bold",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Servicios de PBOO:
+            </div>
+            <div
+              style={{
+                width: 540,
+                color: "#1A191E",
+                fontSize: 23,
+                fontFamily: "Arial",
+                fontWeight: "bold",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Botón de pánico físico.
+            </div>
+            <div
+              style={{
+                width: 600,
+                color: "#1A191E",
+                fontSize: 18,
+                fontFamily: "Arial",
+                fontWeight: "500",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Nuestro dispositivo portátil cuenta con un botón de activación
+              rápida que permite a los usuarios solicitar ayuda instantánea en
+              caso de emergencia. Diseñado para ser fácil de usar y accesible en
+              todo momento, nuestro botón de pánico físico es una herramienta
+              confiable para la seguridad personal.
+              <br />
+              En PBOO, nos comprometemos a monitorear continuamente las alertas
+              y notificaciones de nuestros usuarios. Nuestro equipo de seguridad
+              está listo para actuar rápidamente en caso de cualquier
+              emergencia, brindando asistencia activa y coordinación con
+              servicios de emergencia locales cuando sea necesario.
+              <br />
+              Reconocemos que cada usuario es único, por lo que ofrecemos
+              soluciones adaptadas a las necesidades individuales de cada
+              persona. Desde la configuración inicial hasta el seguimiento
+              continuo, nos esforzamos por proporcionar una experiencia
+              personalizada que garantice la máxima seguridad y tranquilidad.
+            </div>
+          </div>
+          <img
+              style={{
+                position: "absolute",
+                top: "calc(190% + 30px)",
+                left: 50,
+                width: "20%",
+                height: "auto",
+              }}
+              src={ser}
+              alt="ser"
+            />
+
+          <div
+            style={{
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 16,
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                textAlign: "center",
+                color: "#1A191E",
+                fontSize: 18,
+                fontFamily: "Arial",
+                fontWeight: "500",
+                lineHeight: 2,
+                wordWrap: "break-word",
+              }}
+            >
+              Compartir en:
+            </div>
+            <div
+              style={{
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 16,
+                display: "inline-flex",
+              }}
+            >
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  background: "#F8F8F8",
+                  borderRadius: 100,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 10,
+                  display: "flex",
+                }}
+              >
+                <div style={{ width: 16, height: 16, position: "relative" }}>
+                  <div>
+                    <FaGoogle />
+                  </div>
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  background: "#F8F8F8",
+                  borderRadius: 100,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 10,
+                  display: "flex",
+                }}
+              >
+                <div style={{ width: 16, height: 16, position: "relative" }}>
+                  <div>
+                    <FaFacebook />
+                  </div>
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  background: "#F8F8F8",
+                  borderRadius: 100,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 10,
+                  display: "flex",
+                }}
+              >
+                <div style={{ width: 16, height: 16, position: "relative" }}>
+                  <div>
+                    <FaApple />
+                  </div>
+                </div>
+              </div>
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  background: "#F8F8F8",
+                  borderRadius: 100,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 10,
+                  display: "flex",
+                }}
+              >
+                <div style={{ width: 16, height: 16, position: "relative" }}>
+                  <div>
+                    <FaTwitter />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
       </div>
-      
-      
-      <img
-        style={{
-          position: "absolute",
-          top: "calc(32% + 30px)",
-          right: 150,
-          width: "26%",
-          height: "auto",
-        }}
-        src={nos}
-        alt="nos"
-      />  
-      
-    
-      <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<div
+      <div
         style={{
           width: "100%",
           height: "100%",
@@ -771,10 +823,8 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-        
     </div>
-    
   );
 };
 
-export default Nosotros;
+export default Servicios;

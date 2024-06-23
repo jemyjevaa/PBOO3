@@ -4,8 +4,7 @@ import lupa from "../../src/assets/images/robot1.png";
 import { CSSTransition } from "react-transition-group"; // Importa CSSTransition
 import "./trans.css"; // Importa tus estilos CSS
 import { Link } from "react-router-dom";
-import Button from "./Inicio";
-
+import axios from "axios";
 
 const Form4 = () => {
   useEffect(() => {
@@ -563,7 +562,7 @@ const Form4 = () => {
                   Volver<span style={{ marginLeft: 5 }}></span>
                 </Button>
               </Link>
-              <Link to="/Form3">
+              <Link to="/Inicio2">
               <Button>
                 Siguiente<span style={{ marginLeft: 5 }}></span>
               </Button>
